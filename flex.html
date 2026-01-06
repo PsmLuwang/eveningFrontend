@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+
+  <style>
+    body {
+      margin: 0;
+    }
+    .box1 {
+      height: 80px;
+      width: 80px;
+      background-color: rgba(255, 0, 0, 0.26);
+      border: 1px solid black;
+    }
+    .box2 {
+      height: 40px;
+      width: 80px;
+      background-color: rgba(255, 0, 0, 0.26);
+      border: 1px solid black;
+    }
+    .box3 {
+      height: 50px;
+      width: 80px;
+      background-color: rgba(255, 0, 0, 0.26);
+      border: 1px solid black;
+    }
+
+    .box4 {
+      height: 80px;
+      width: 80px;
+      background-color: rgba(255, 0, 0, 0.26);
+      border: 1px solid black;
+    }
+    .box5 {
+      height: 40px;
+      width: 80px;
+      background-color: rgba(255, 0, 0, 0.26);
+      border: 1px solid black;
+    }
+    .box6 {
+      height: 50px;
+      width: 80px;
+      background-color: rgba(255, 0, 0, 0.26);
+      border: 1px solid black;
+    }
+
+    /* start */
+    .flex-container {
+      background: rgba(128, 128, 128, 0.16);
+      height: 300px;
+      display: flex;
+      justify-content: center; /* start, center, end, space-between, space-around, space-evenly */
+      align-items: center; /* strat, center, end */
+      gap: 8px;
+    }
+    /* ///////////////////////////////////////////////////////// */
+
+    .flex-container-column {
+      background: rgba(128, 115, 0, 0.233);
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- flex direction: row -->
+  <section class="flex-container">
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+  </section>
+
+  <br />
+
+  <!-- flex direction: column -->
+  <section class="flex-container-column">
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+    <div class="box6">6</div>
+  </section>
+
+</body>
+</html>
