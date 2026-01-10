@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector</title>
+
+  <style>
+    /* Universal selector */
+    * {
+      color: blue;
+    }
+
+    /* ID selector */
+    #btn {
+      background: red;
+    }
+
+    /* Class selector */
+    .btn {
+      background: green;
+    }
+
+    /* Element selector */
+    button {
+      background: red;
+      color: white;
+    }
+
+    /* Grouping selector */
+    button, h1, h2 {
+      background-color: green;
+    } 
+    .btn1, .text1, h2 {
+      color: white;
+    }
+
+
+    /* Descendant selector */
+    .container h1 {
+      color: green;
+    }
+
+    /* Child selector */
+    .container > h1 {
+      color: red;
+    }
+
+    /* Adjacent Sibling */
+    .brother + h4 {
+      color: red;
+    }
+
+    /* General Sibling */
+    .brother ~ h4 {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>
