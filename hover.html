@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50">
+  <button
+    class="bg-green-600 text-white p-3 m-5 hover:bg-red-500 hover:text-black"
+  >Login</button>
+
+  <div class="w-80 mx-auto shadow-md bg-white rounded-lg overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
+    <div class="h-55 overflow-hidden relative">
+      <img 
+        class="h-full w-full object-cover hover:scale-110 transition-all"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfsKcLtcDvagrqCxPXwH7LG9Nddg1K83l6tQ&s" 
+        alt=""
+      >
+
+      <div class="w-[calc(100%-40px)] h-30 bg-white text-center rounded-t-lg absolute left-5 -bottom-20 hover:bottom-0 transition-all duration-1000">
+        Details
+      </div>
+    </div>
+
+    <div class="p-5 text-gray-700 bg-linear-to-b from-red-200/70 to-white">
+      <h1 class="font-bold text-lg">Sports Shoe</h1>
+      <h1 class="font-semibold">₹999.99</h1>
+      <p class="text-xs text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dignissimos deserunt, dolorum quia esse labore?</p>
+      <div class="grid grid-cols-2 gap-3 mt-5 font-semibold text-sm">
+        <button class="bg-yellow-400 hover:bg-yellow-500 transition-all rounded-md h-8">Buy now</button>
+        <button class="border border-gray-400 rounded-md h-8">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
