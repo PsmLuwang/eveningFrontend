@@ -12,7 +12,7 @@
   <nav class="bg-white flex justify-between items-center h-14 px-5">
     <h1 class="font-bold text-xl">Nexcent</h1>
 
-    <div class="flex items-center gap-6 text-sm font-semibold">
+    <div class="max-md:hidden flex items-center gap-6 text-sm font-semibold">
       <a href="#">Home</a>
       <a href="#">Features</a>
       <a href="#">Community</a>
@@ -25,10 +25,14 @@
         Register Now <i class="fa-solid fa-arrow-right-long"></i>
       </a>
     </div>
+
+    <div class="hidden max-md:block">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </nav>
 
   <header class="bg-gray-100 py-14">
-    <div class="flex justify-between items-center gap-5 p-5 max-w-320 mx-auto">
+    <div class="flex max-sm:flex-col justify-between items-center gap-5 p-5 max-w-320 mx-auto">
       <div>
         <h1 class="text-5xl font-semibold mb-5">
           Lessons and insights <br /> <span class="text-green-600">from 8 years</span> 
