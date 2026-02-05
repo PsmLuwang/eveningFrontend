@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Render</title>
+</head>
+<body>
+  <div>
+    <h1>Alex</h1>
+    <h1>John</h1>
+    <h1>Max</h1>
+  </div>
+
+  <br />
+
+
+  <!-- //// -->
+  <div id="nameContainer">
+    
+  </div>
+
+
+
+  <script>
+    const username = ["Alex", "John", "Max", "Jackson"];
+    console.log(username);
+    console.log(username[0]);
+    console.log(username[1]);
+    console.log(username[2]);
+    
+
+
+
+    const nameContainer = document.getElementById("nameContainer");
+    for (let i = 0; i < username.length; i++) {
+      nameContainer.innerHTML += `
+        <h1>Welcome ${username[i]}</h1>
+      `;
+    }
+  </script>
+</body>
+</html>

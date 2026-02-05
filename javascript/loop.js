@@ -26,6 +26,9 @@ const loopDOM = document.getElementById("loopDOM");
 for (let i = 0; i < 3; i++) {
   loopDOM.innerHTML += `<h1 style="color: red">JavaScript</h1>`;
 }
+// loopDOM.innerText += ` text `;
+console.log(loopDOM);
+
 
 
 const test = document.getElementById("test");
