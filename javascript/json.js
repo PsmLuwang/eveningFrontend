@@ -26,16 +26,22 @@ const users = [
     name: "Priyansu", 
     phone: 1234567890, 
     email: "spriyansu@gmail.com",
+    role: "admin",
+    bal: 1500,
   },
   { 
     name: "John", 
     phone: 9987654321, 
-    email: "john@gmail.com" 
+    email: "john@gmail.com",
+    role: "user",
+    bal: 850,
   },
   { 
     name: "Max", 
     phone: 5643746322, 
-    email: "max@gmail.com" 
+    email: "max@gmail.com",
+    role: "user",
+    bal: 1200
   },
 ]
 
@@ -43,6 +49,26 @@ const users = [
 
 const container = document.getElementById("container");
 for (let i = 0; i < users.length; i++) {
-  container.innerHTML += `<h1>Welcome ${users[i].name}, phone ${users[i].phone}</h1>`;
+  container.innerHTML += `
+    <h1 
+      class="
+        text-center font-semibold text-3xl 
+        ${users[i].role == "admin" ? "text-blue-500 bg-yellow-500" : "text-green-500 bg-blue-200"}
+      "
+    >
+      Welcome ${users[i].name}, phone ${users[i].phone}, 
+      <span class="${users[i].bal < 1000 ? "text-red-500" : "text-violet-500"}">
+        ${users[i].bal}
+      </span>
+    </h1>
+  `;
   
 }
+{/* <h1>Welcome Priyansu, phone 1234567890, <span>1500</span></h1> */}
+
+const result = users[1].role == "admin" ? "text-red-500 bg-yellow-500" : "text-green-500 bg-blue-500";
+
+console.log(result);
+
+
+
