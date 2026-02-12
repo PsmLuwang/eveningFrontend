@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Method</title>
+</head>
+<body>
+  <h1>Array Method</h1>
+
+  <script>
+    const arr = [10, 20, 30, 40, 50];
+
+    // push
+    arr.push(60); // [10, 20, 30, 40, 50, 60]
+    // unshift
+    arr.unshift(5); // [5, 10, 20, 30, 40, 50, 60]
+    // pop 
+    arr.pop(); // [5, 10, 20, 30, 40, 50]
+    // shift
+    arr.shift(); // [10, 20, 30, 40, 50]
+
+    console.log(arr[3]); // 40 
+    console.log(arr.indexOf(20)); // 1
+
+    ////
+    console.log(arr.find(e => e == 50));
+    console.log(arr);
+
+
+    function add(a, b) {
+      const c = a + b;
+      return c;
+    }
+
+    function subtract(a, b) {
+      const c = a - b;
+      return c;
+    }
+
+
+    function result() {
+      const addResult = add(20, 50);
+      
+      const subtractResult = subtract(40, 20);
+
+      console.log(`Add: ${addResult}, Subtract: ${subtractResult}`);
+    }
+
+    result();
+    
+    
+  </script>
+</body>
+</html>
