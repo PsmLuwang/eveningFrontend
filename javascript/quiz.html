@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white w-full max-w-2xl p-6 rounded-xl shadow-lg">
+    <h1 class="text-2xl font-bold mb-4 text-center">Simple Quiz App</h1>
+
+    <form id="quizForm" class="space-y-6">
+
+      <!-- Questions will be inserted here -->
+      <div id="questionsContainer"></div>
+
+      <button 
+        type="submit"
+        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+        Submit Quiz
+      </button>
+
+    </form>
+
+    <div id="result" class="mt-6 text-center text-lg font-semibold"></div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "1. What does HTML stand for?",
+        options: [
+          "Hyper Text Markup Language",
+          "High Tech Modern Language",
+          "Home Tool Markup Language",
+          "Hyperlinks and Text Mark Language"
+        ],
+        correct: 0
+      },
+      {
+        question: "2. Which language is used for styling web pages?",
+        options: ["HTML", "JQuery", "CSS", "XML"],
+        correct: 2
+      },
+      {
+        question: "3. Which is not a JavaScript framework?",
+        options: ["React", "Angular", "Vue", "Django"],
+        correct: 3
+      },
+      {
+        question: "4. Which method converts JSON to object?",
+        options: ["JSON.parse()", "JSON.stringify()", "JSON.convert()", "JSON.toObject()"],
+        correct: 0
+      },
+      {
+        question: "5. Which keyword declares a block-scoped variable?",
+        options: ["var", "let", "const", "Both let and const"],
+        correct: 3
+      }
+    ];
+
+    const container = document.getElementById("questionsContainer");
+
+    // Generate Questions Dynamically
+    questions.forEach((q, index) => {
+      const questionBlock = document.createElement("div");
+      questionBlock.classList.add("bg-gray-50", "p-4", "rounded-lg");
+
+      let optionsHTML = "";
+      q.options.forEach((option, i) => {
+        optionsHTML += `
+          <label class="flex items-center space-x-2 mt-2 cursor-pointer">
+            <input type="radio" 
+                   name="question${index}" 
+                   value="${i}" 
+                   class="text-blue-600">
+            <span>${option}</span>
+          </label>
+        `;
+      });
+
+      questionBlock.innerHTML = `
+        <p class="font-medium">${q.question}</p>
+        ${optionsHTML}
+      `;
+
+      container.appendChild(questionBlock);
+    });
+
+    // Submit Logic
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let score = 0;
+
+      questions.forEach((q, index) => {
+        const selected = document.querySelector(
+          `input[name="question${index}"]:checked`
+        );
+
+        if (selected && parseInt(selected.value) === q.correct) {
+          score++;
+        }
+      });
+
+      const result = document.getElementById("result");
+      result.innerHTML = `You scored ${score} out of ${questions.length}`;
+
+      if (score === questions.length) {
+        result.classList.add("text-green-600");
+      } else {
+        result.classList.add("text-red-600");
+      }
+    });
+  </script>
+
+</body>
+</html>
