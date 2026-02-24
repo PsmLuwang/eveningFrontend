@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POST Method</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  
+  <h1>POST Method</h1>
+  <h1>Add New Student</h1>
+
+
+  <form onsubmit="handleSubmit(event)" class="grid w-100 mx-auto">
+    <label for="">name</label>
+    <input type="text" name="name" class="bg-gray-200"/>
+
+    <label for="">phone</label>
+    <input type="text" name="phone" class="bg-gray-200"/>
+
+    <label for="">whatsapp</label>
+    <input type="text" name="whatsapp" class="bg-gray-200"/>
+
+    <label for="">email</label>
+    <input type="text" name="email" class="bg-gray-200"/>
+
+    <label for="">remark</label>
+    <input type="text" name="remark" class="bg-gray-200"/>
+
+    <label for="">registrationNo</label>
+    <input type="text" name="registrationNo" class="bg-gray-200"/>
+
+    <label for="">courseId</label>
+    <input type="text" name="courseId" value="69973fe5680f1da6f754db0d" disabled class="bg-gray-200"/>
+    
+    <button type="submit" class="bg-blue-400 mt-5">Add Student</button>
+  </form>
+
+  <script>
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      
+      const newStudent = {
+        name: e.target.name.value,
+        phone: e.target.phone.value,
+        whatsapp: e.target.whatsapp.value,
+        email: e.target.email.value,
+        registrationNo: e.target.registrationNo.value,
+        remark: e.target.remark.value,
+        courseId: e.target.courseId.value,
+      }
+
+      await fetch("http://localhost:5050/api/student/create", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(newStudent)
+      })
+      
+      e.target.reset();
+    }
+
+  </script>
+</body>
+</html>
